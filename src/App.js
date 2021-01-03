@@ -19,7 +19,7 @@ function App() {
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink to="/" className="navbar-brand">
-            <span className="text-success">EJERCICIO</span></NavLink>
+            <span className="text-success">INICIO</span></NavLink>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -33,9 +33,7 @@ function App() {
                 <NavLink to="/agregar" className="nav-link" activeClassName="active">Agregar</NavLink>
               </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input id="inputFiltrar" className="form-control mr-sm-2" type="search" placeholder="Filtrar ..." aria-label="Search"/>
-            </form>
+              <input id="inputFiltrar" className="form-control mr-sm-2 col-4" type="text" placeholder="Filtrar ..."/>
           </div>
         </nav>
 
