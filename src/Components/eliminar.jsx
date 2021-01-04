@@ -39,7 +39,7 @@ const Eliminar = () => {
                     </p>
                 </div>
                 <a  className="btn btn-danger mr-2" onClick={()=>peticionDelete()} href="/listar/">Confirmar</a>
-                <a  className="btn btn-secondary m-2" href="/listar/">Candelar</a>
+                <a  className="btn btn-secondary m-2" href="/listar/">Cancelar</a>
 
                 <hr></hr>
 

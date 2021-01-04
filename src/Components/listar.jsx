@@ -30,7 +30,7 @@ const Listar = () => {
                         <th>Nombre de usuario</th>
                         <th>Email</th>
                         <th>Teléfono</th>
-                        <th colSpan="2" className="text-center">Acciones</th>
+                        <th colSpan="1" className="text-center">Acciones</th>
                     </tr>
                     </thead>
                     <tbody id="tablaUsuaros">
@@ -40,9 +40,9 @@ const Listar = () => {
                         <td>{item.username}</td>
                         <td>{item.email}</td>
                         <td>{item.telefono}</td>
-                        <td>
+                        {/* <td>
                             <Link to={`/editar/${item.id}`} className="nav-link text-primary text-center"><FontAwesomeIcon icon={faEdit}/></Link>
-                        </td>
+                        </td> */}
                         <td>   
                             <Link to={`/eliminar/${item.id}`} className="nav-link text-danger text-center"><FontAwesomeIcon icon={faTrashAlt}/></Link>
                         </td>
