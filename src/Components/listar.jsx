@@ -1,6 +1,7 @@
 import React, { useState , useEffect, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {Link, Router} from "react-router-dom";
 
 const Listar = () => {
 
@@ -29,7 +30,7 @@ const Listar = () => {
                         <th>Nombre de usuario</th>
                         <th>Email</th>
                         <th>Teléfono</th>
-                        <th>Acciones</th>
+                        <th colSpan="2" className="text-center">Acciones</th>
                     </tr>
                     </thead>
                     <tbody id="tablaUsuaros">
@@ -40,10 +41,10 @@ const Listar = () => {
                         <td>{item.email}</td>
                         <td>{item.telefono}</td>
                         <td>
-                        <button type="button" className="btn btn-basic text-primary" data-bs-toggle="tooltip" title="Editar"
-                            ><FontAwesomeIcon icon={faEdit}/></button>
-                        <button type="button" className="btn btn-basic text-danger" data-bs-toggle="tooltip" title="Eliminar"
-                            ><FontAwesomeIcon icon={faTrashAlt}/></button>
+                            <Link to={`/editar/${item.id}`} className="nav-link text-primary text-center"><FontAwesomeIcon icon={faEdit}/></Link>
+                        </td>
+                        <td>   
+                            <Link to={`/eliminar/${item.id}`} className="nav-link text-danger text-center"><FontAwesomeIcon icon={faTrashAlt}/></Link>
                         </td>
                     </tr>
                     ))
@@ -52,7 +53,9 @@ const Listar = () => {
                 </table> 
 
             </div>
-        </Fragment>       
+
+        </Fragment>      
+
      );
 }
  

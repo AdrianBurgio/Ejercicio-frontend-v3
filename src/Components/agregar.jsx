@@ -4,7 +4,7 @@ const Agregar = () => {
     return ( 
         <Fragment>
             <div className="Container m-5">
-                <h2>Agregar usuario</h2>
+                <h4>Agregar usuario</h4>
             </div>
             
 

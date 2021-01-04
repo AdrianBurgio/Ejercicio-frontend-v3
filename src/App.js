@@ -7,9 +7,13 @@ import {
   NavLink
 } from "react-router-dom";
 
-  import Inicio from './Components/inicio';
-  import Listar from './Components/listar';
-  import Agregar from './Components/agregar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faList, faSearch, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
+import Inicio from './Components/inicio';
+import Listar from './Components/listar';
+import Agregar from './Components/agregar';
+import Eliminar from './Components/eliminar';
 
 
 function App() {
@@ -27,13 +31,18 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <NavLink to="/listar" className="nav-link" activeClassName="active">Listar</NavLink>
+                <NavLink to="/listar" className="nav-link" activeClassName="active">
+                <FontAwesomeIcon icon={faList}/> Listar
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/agregar" className="nav-link" activeClassName="active">Agregar</NavLink>
+                <NavLink to="/agregar" className="nav-link" activeClassName="active">
+                <FontAwesomeIcon icon={faUserPlus}/> Agregar
+                </NavLink>
               </li>
-            </ul>
+            </ul> 
               <input id="inputFiltrar" className="form-control mr-sm-2 col-4" type="text" placeholder="Filtrar ..."/>
+              
           </div>
         </nav>
 
@@ -46,9 +55,9 @@ function App() {
           <Route path="/listar">
             <Listar/>
           </Route>
-          {/* <Route path="/users/:id" exact>
-            <User />
-          </Route> */}
+          <Route path="/eliminar/:id" exact>
+            <Eliminar />
+          </Route>
           <Route path="/agregar">
             <Agregar />
           </Route>
