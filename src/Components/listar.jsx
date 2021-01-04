@@ -2,6 +2,7 @@ import React, { useState , useEffect, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {Link, Router} from "react-router-dom";
+import axios from 'axios';
 
 const Listar = () => {
 
@@ -9,16 +10,31 @@ const Listar = () => {
     const [data, setData]=useState([]);
     const [usuario, setUsuario] = useState([])
 
-    useEffect(() => {
-    const obtenerDatos = async () => {
-        const data = await fetch(baseUrl)
-        const usuarios = await data.json()
-        setUsuario(usuarios)
-        }
+    // useEffect(() => {
+    // const obtenerDatos = async () => {
+    //     const data = await fetch(baseUrl)
+    //     const usuarios = await data.json()
+    //     setUsuario(usuarios)
+    //     }
 
-    obtenerDatos()
-    }, [])
+    // obtenerDatos()
+    // }, [])
+
+    const peticionGet=async()=>{
+        await axios.get(baseUrl)
+        .then(response=>{
+            setData(response.data);
+        }).catch(error=>{
+            console.log(error);
+        })
+    }
+
+    useEffect(()=>{
+        peticionGet();
+    },[])
     
+
+
     return ( 
         <Fragment>
             <div className="Container m-5">
@@ -35,7 +51,7 @@ const Listar = () => {
                     </thead>
                     <tbody id="tablaUsuaros">
                     {
-                    usuario.map(item => (
+                    data.map(item => (
                     <tr key={item.id}>
                         <td>{item.username}</td>
                         <td>{item.email}</td>
